@@ -454,6 +454,17 @@ section.s .head p.lead { margin-top: 18px; }
 }
 .cta-band button:hover { background: var(--brand-2); }
 .cta-band .fine { margin-top: 16px; font-size: 13px; color: #B09877; }
+.cta-band .hidden-field { display: none; }
+.cta-band .form-status {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.cta-band .form-status.is-success { color: #E8DCC4; }
+.cta-band .form-status.is-error { color: #F2B8A2; }
+.cta-band .form.is-success input,
+.cta-band .form.is-success button { opacity: 0.72; }
 
 /* ---------- Footer ---------- */
 footer.foot {

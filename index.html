@@ -435,9 +435,22 @@
     <span class="eyebrow" style="color:#E8DCC4; background:transparent; padding:0; border:0;">Ready when you are</span>
     <h2 style="margin-top:14px;">Your booking page,<br/>live by tomorrow morning.</h2>
     <p>Sign up with your email — we&rsquo;ll have your booking page and a setup call ready within 24 hours. Free 14-day Pro trial. No credit card.</p>
-    <form class="form">
-      <input type="email" required placeholder="you@your-restaurant.id" />
+    <form
+      name="trial-signup"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      class="form"
+    >
+      <input type="hidden" name="form-name" value="trial-signup" />
+      <input type="hidden" name="subject" value="New interest in Tamu App" data-remove-prefix />
+      <input type="hidden" name="message" value="Someone expressed interest in Tamu App from your landing page. Reply within 24 hours to welcome them and schedule their setup call." />
+      <p class="hidden-field" aria-hidden="true">
+        <label>Don&rsquo;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+      </p>
+      <input type="email" name="email" required placeholder="you@your-restaurant.id" autocomplete="email" />
       <button type="submit">Start free trial</button>
+      <p class="form-status" role="status" aria-live="polite" hidden></p>
     </form>
     <p class="fine">By signing up you agree to our terms &amp; privacy. Cancel anytime.</p>
   </div>
@@ -450,7 +463,7 @@
     <div class="grid">
       <div>
         <div class="brand-line"><img class="logo-img" src="assets/logo.png" alt="Tamu Creative" /></div>
-        <p class="about">A modern reservation engine for restaurants and cafés in Indonesia and Southeast Asia.</p>
+        <p class="about">A modern reservation engine for restaurants and cafés in Southeast Asia.</p>
       </div>
       <div>
         <h5>Product</h5>
@@ -483,7 +496,7 @@
       </div>
     </div>
     <div class="end">
-      <span>© 2026 PT Tamu Hospitality Indonesia · Jakarta &amp; Bali</span>
+      <span>© 2026. Tamu App</span>
       <div class="lang">
         <button class="on">EN</button>
         <button>ID</button>
