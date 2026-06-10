@@ -466,6 +466,30 @@ section.s .head p.lead { margin-top: 18px; }
 .cta-band .form.is-success input,
 .cta-band .form.is-success button { opacity: 0.72; }
 
+/* ---------- Legal pages ---------- */
+.legal { padding: 72px 0 96px; }
+.legal h1 { margin-top: 16px; }
+.legal .legal-updated { margin-top: 12px; font-size: 14px; color: var(--muted-2); }
+.legal .lead { margin-top: 24px; max-width: 720px; }
+.legal .lead strong { color: var(--ink); font-weight: 600; }
+.legal section { margin-top: 40px; max-width: 720px; }
+.legal section h2 {
+  font-size: 20px; margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--line);
+}
+.legal section h3 { font-size: 16px; margin: 20px 0 10px; color: var(--ink-2); }
+.legal section p { margin-top: 10px; line-height: 1.65; }
+.legal section ul {
+  margin: 12px 0 0; padding-left: 20px;
+  color: var(--muted); display: grid; gap: 8px;
+}
+.legal section ul li { line-height: 1.6; }
+.legal section a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.legal section a:hover { color: var(--choco); }
+footer.foot .legal-links { display: inline-flex; gap: 16px; }
+footer.foot .legal-links a { color: var(--muted); }
+footer.foot .legal-links a:hover { color: var(--ink); }
+
 /* ---------- Footer ---------- */
 footer.foot {
   border-top: 1px solid var(--line);
