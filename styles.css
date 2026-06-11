@@ -348,6 +348,37 @@ section.s .head p.lead { margin-top: 18px; }
 .wa-msg .meta { font-size: 11px; color: var(--muted-2); margin-top: 6px; }
 .wa-msg b { color: var(--ink); font-weight: 600; }
 
+/* ---------- Team ---------- */
+.team-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+}
+.team-card { text-align: center; }
+.team-photo {
+  aspect-ratio: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--brand-soft) 0%, var(--brand) 100%);
+  border: 1px solid var(--line);
+  margin-bottom: 16px;
+  display: grid; place-items: center;
+}
+.team-photo img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.team-photo:has(img) .team-initials { display: none; }
+.team-initials {
+  font-size: 36px; font-weight: 600; letter-spacing: -0.02em;
+  color: var(--choco); opacity: 0.35;
+}
+.team-card h3 {
+  font-size: 17px; font-weight: 600; letter-spacing: -0.01em;
+}
+.team-card .team-role {
+  margin-top: 4px; font-size: 13.5px; color: var(--muted); line-height: 1.45;
+}
+@media (max-width: 960px) { .team-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+@media (max-width: 520px) { .team-grid { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; } }
+
 /* ---------- Stats band ---------- */
 .stats {
   background: var(--bg-soft);
