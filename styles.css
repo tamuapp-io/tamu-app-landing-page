@@ -520,10 +520,19 @@ section.s .head p.lead { margin-top: 18px; }
 /* ---------- Footer ---------- */
 footer.foot {
   border-top: 1px solid var(--line);
-  padding: 48px 0 28px;
+  padding: 36px 0 20px;
   background: #FCF9F2;
 }
-footer.foot .foot-main { max-width: 480px; }
+/* Brand on the left, registered-entity details on the right — two short columns
+   keep the footer to a couple of lines tall instead of one long stack. */
+footer.foot .foot-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px 48px;
+  flex-wrap: wrap;
+}
+footer.foot .foot-main { max-width: 420px; }
 footer.foot .brand-line { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 17px; }
 footer.foot .brand-line .logo-img { height: 28px; width: auto; display: block; }
 footer.foot .about { margin-top: 12px; font-size: 14px; color: var(--muted); line-height: 1.6; }
@@ -538,8 +547,47 @@ footer.foot .foot-link {
 }
 footer.foot .foot-link svg { width: 16px; height: 16px; flex-shrink: 0; }
 footer.foot .foot-link:hover { color: var(--choco); }
+
+/* Registered entity details. <address> is italic by default, which reads as
+   emphasis this block doesn't want. */
+footer.foot .foot-legal {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 2px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  /* --muted, not --muted-2: the lighter token is only 2.92:1 here, and company
+     registration details are the last thing that should be hard to read. */
+  color: var(--muted);
+}
+footer.foot .foot-legal-name { font-weight: 600; color: var(--choco); }
+footer.foot .foot-legal-ids,
+footer.foot .foot-legal-contact { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 2px 16px; }
+footer.foot .foot-legal-contact { margin-top: 3px; }
+footer.foot .foot-legal-contact a { color: var(--muted); transition: color .15s ease; }
+footer.foot .foot-legal-contact a:hover,
+footer.foot .foot-legal-contact a:focus-visible { color: var(--choco); }
+
+/* Stacked below the brand on small screens, where a right-aligned column reads
+   as a mistake. Phone and email are the only things here anyone taps, so they
+   get a real hit area once there's no hover to rely on. */
+@media (max-width: 720px) {
+  footer.foot .foot-legal { align-items: flex-start; text-align: left; }
+  footer.foot .foot-legal-ids,
+  footer.foot .foot-legal-contact { justify-content: flex-start; }
+}
+@media (max-width: 640px) {
+  footer.foot .foot-legal-contact { gap: 0 16px; }
+  footer.foot .foot-legal-contact a {
+    display: inline-flex; align-items: center; min-height: 44px;
+  }
+}
+
 footer.foot .end {
-  margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line);
+  margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line);
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
   flex-wrap: wrap;
   font-size: 12.5px; color: var(--muted-2);
