@@ -63,7 +63,7 @@
 
           setFormStatus(
             trialForm,
-            'Something went wrong. Please try again or email us at agie@tamucreative.co.',
+            'Something went wrong. Please try again or email us at alex@tamucreative.co.',
             'error'
           );
         });
