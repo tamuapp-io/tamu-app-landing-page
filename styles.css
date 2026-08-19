@@ -592,6 +592,14 @@ footer.foot .end {
   flex-wrap: wrap;
   font-size: 12.5px; color: var(--muted-2);
 }
+/* --muted, not the surrounding --muted-2: that token is 2.92:1 here, and a
+   link is something people have to find and click. */
+footer.foot .end a { color: var(--muted); transition: color .15s ease; }
+footer.foot .end a:hover,
+footer.foot .end a:focus-visible { color: var(--choco); }
+@media (max-width: 640px) {
+  footer.foot .end a { display: inline-flex; align-items: center; min-height: 44px; }
+}
 footer.foot .end .lang { display: inline-flex; gap: 6px; }
 footer.foot .end .lang button {
   background: transparent; border: 1px solid var(--line-2);
